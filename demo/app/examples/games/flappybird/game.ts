@@ -593,10 +593,10 @@ function startGame(scene) {
     makePipes(scene)
 }
 
-export function setupGame(canvas, context) {
+export function setupGame(canvas) {
     game = new TNSPhaser.game({
         canvas,
-        type: 2,
+        type: 1,
         scene: {
             preload,
             create,

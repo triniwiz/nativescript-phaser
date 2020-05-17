@@ -1,6 +1,6 @@
 {
 	"name": "nativescript-phaser",
-	"version": "1.0.0-alpha0",
+	"version": "1.0.0-alpha1",
 	"description": "Build awesome 2D games with Phaser.js and NativeScript",
 	"main": "index",
 	"nativescript": {
@@ -68,8 +68,10 @@
 		"semver": "^5.6.0"
 	},
 	"dependencies": {
-		"nativescript-browser-polyfill": "^1.0.0-alpha1",
-		"nativescript-canvas-plugin": "^0.3.0",
+		"nativescript-browser-polyfill": "^1.0.0-alpha2"
+	},
+	"peerDependencies": {
+		"nativescript-canvas-plugin": "~0.5.0",
 		"phaser": "^3.23.0"
 	},
 	"bootstrapper": "nativescript-plugin-seed"

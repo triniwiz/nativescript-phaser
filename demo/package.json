@@ -13,7 +13,8 @@
   "repository": "<fill-your-repository-here>",
   "dependencies": {
     "@nativescript/theme": "~2.3.0",
-    "nativescript-canvas-plugin": "file:../../nativescript-canvas-plugin/src",
+    "nativescript-browser-polyfill": "^1.0.0-alpha2",
+    "nativescript-canvas-plugin": "^0.4.1",
     "nativescript-phaser": "file:../src",
     "tns-core-modules": "~6.4.0"
   },
