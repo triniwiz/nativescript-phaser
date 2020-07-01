@@ -1,5 +1,5 @@
 import TNSPhaser from "nativescript-phaser";
-import { screen } from "tns-core-modules/platform";
+import { screen } from "@nativescript/core/platform";
 import { func } from "~/utils";
 const Phaser = (global as any).Phaser;
 const scale = screen.mainScreen.scale;
@@ -596,7 +596,7 @@ function startGame(scene) {
 export function setupGame(canvas) {
     game = new TNSPhaser.game({
         canvas,
-        type: 1,
+        type: 2,
         scene: {
             preload,
             create,

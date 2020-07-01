@@ -1,5 +1,5 @@
 import { setupGame } from "./game";
-import { GestureStateTypes } from "tns-core-modules/ui/gestures/gestures";
+import { GestureStateTypes } from "@nativescript/core/ui/gestures/gestures";
 let canvas;
 let page;
 declare const CANVAS_RENDERER;
@@ -8,14 +8,9 @@ export function loaded(args) {
 }
 export function canvasLoaded(args) {
     canvas = args.object;
-    setTimeout(()=>{
-        setupGame(args.object);
-    }, 3000)
+    setupGame(canvas)
 }
 export function indicatorLoaded(args) {}
-
-
-
 
 function getTouchEvent(name, event, target) {
     const pointers = new TouchList();

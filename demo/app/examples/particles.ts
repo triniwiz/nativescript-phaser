@@ -1,7 +1,7 @@
 import { TNSCanvas, TNSCanvasRenderingContext2D } from 'nativescript-canvas-plugin';
-import { GestureTypes, TouchGestureEventData } from 'tns-core-modules/ui/gestures';
-import * as platform from 'tns-core-modules/platform'
-export function particles(canvas: TNSCanvas) {
+import { GestureTypes, TouchGestureEventData } from '@nativescript/core/ui/gestures';
+import * as platform from '@nativescript/core/platform'
+export function particles(canvas) {
         const ctx = canvas.getContext('2d') as TNSCanvasRenderingContext2D;
 
 // Set Canvas to be window size
@@ -26,8 +26,8 @@ export function particles(canvas: TNSCanvas) {
             {r:253,g:238,b:152} // totesASun
         ]
     };
-    const width = canvas.getMeasuredWidth();
-    const height = canvas.getMeasuredHeight();
+    const width = canvas.width;
+    const height = canvas.height;;
 
 // Some Variables hanging out
     var particles = [],

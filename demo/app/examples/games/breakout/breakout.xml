@@ -7,7 +7,7 @@
     </ActionBar>
 
     <GridLayout iosOverflowSafeArea="false">
-        <canvas:TNSCanvas id="canvas" width="100%" height="100%" layoutChanged="canvasLoaded"/>
+        <canvas:TNSCanvas id="canvas" width="100%" height="100%" ready="canvasLoaded"/>
         <ActivityIndicator loaded="indicatorLoaded" busy="{{ isLoading }}" visibility="{{ isLoading ? 'visible': 'collapsed' }}" />
     </GridLayout>
 </Page>
