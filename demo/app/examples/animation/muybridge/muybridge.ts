@@ -1,6 +1,6 @@
 import TNSPhaser from 'nativescript-phaser';
 import { TNSCanvasRenderingContext2D } from 'nativescript-canvas-plugin';
-import { ImageSource, fromFile } from 'tns-core-modules/image-source/image-source';
+import { ImageSource, fromFile } from '@nativescript/core/image-source/image-source';
 declare var Phaser;
 
 

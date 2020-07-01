@@ -1,8 +1,6 @@
 import TNSPhaser from 'nativescript-phaser';
-import { TNSCanvasRenderingContext2D } from 'nativescript-canvas-plugin';
-import { ImageSource, fromFile } from 'tns-core-modules/image-source/image-source';
 declare var Phaser;
-
+import { particles } from '../particles';
 
 var fragmentShader = `
 #ifdef GL_ES
@@ -91,14 +89,14 @@ export function loaded(args) {
 export function canvasLoaded(args) {
     canvas = args.object;
     //canvas.nativeView.handleInvalidationManually = true;
-    (global as any).__debug_browser_polyfill_image = true;
-    var game = new TNSPhaser.game({
-        canvas,
-        type: 2,
-        scene: {
-            preload: preload,
-            create: create
-        }
-    });
+   (global as any).__debug_browser_polyfill_image = true;
+   var game = new TNSPhaser.game({
+    canvas,
+    type: 1,
+    scene: {
+        preload: preload,
+        create: create
+    }
+});
 }
 export function indicatorLoaded(args) {}

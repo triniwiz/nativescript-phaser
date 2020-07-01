@@ -7,9 +7,6 @@ export function loaded(args) {
 }
 export function canvasLoaded(args) {
     canvas = args.object;
-    const context = args.object.getContext("webgl");
-    setTimeout(()=>{
-        setupGame(args.object, context);
-    },1000)
+    setupGame(args.object);
 }
 export function indicatorLoaded(args) {}

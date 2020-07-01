@@ -1,5 +1,5 @@
 import Phaser from './phaser';
-import { isAndroid } from 'tns-core-modules/platform';
+import { isAndroid } from '@nativescript/core/platform';
 function game(options) {
   const title = options.title || 'tns-phaser-game';
   // CANVAS
@@ -35,30 +35,24 @@ function game(options) {
       }
       break;
   }
-
-  global.__context = context || null;
+ // global.__context = context || null;
   global.document.readyState = 'complete';
 
   let width;
   let height;
-  if (isAndroid) {
-    width = canvas.nativeView.getWidth();
-    height = canvas.nativeView.getHeight();
-  } else {
-    width = canvas.nativeView.width;
-    height = canvas.nativeView.height;
-  }
-  width = options.width || width;
-  height = options.height || height;
+
+  width = options.width || canvas.width;
+  height = options.height || canvas.height;
 
 
   delete current.domCreateContainer;
   delete current.customEnvironment;
+
   let config = {
     width,
     height,
     canvas,
-    context,
+   // context,
     title,
     type,
     scene,
@@ -68,6 +62,7 @@ function game(options) {
     customEnvironment,
   };
 
+
   config = Object.assign(config, current);
   const game = new Phaser.Game(config);
   game.width = width;
@@ -75,11 +70,7 @@ function game(options) {
   const render = function () {
     requestAnimationFrame(render);
     onRender && onRender();
-    if (isAndroid && !is2D) {
-      canvas.nativeView.flush();
-    } else if (!is2D) {
-      canvas.nativeView.flush();
-    }
+    canvas.flush();
   };
   if (!preventLoop) {
     render();
